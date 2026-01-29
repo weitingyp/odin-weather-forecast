@@ -13,8 +13,13 @@ const locationInput = document.querySelector("#location-input");
 const submitBtn = document.querySelector("#submit-btn");
 submitBtn.addEventListener("click", function(event){
     event.preventDefault();
+    renderLoading();
     getWeatherForecast(locationInput.value).then(renderForecast);
 })
+
+function renderLoading(){
+    forecastContainer.innerText = 'Loading...';
+}
 
 
 const forecastContainer = document.querySelector("#forecast-container");
